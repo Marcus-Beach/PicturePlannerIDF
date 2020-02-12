@@ -1,0 +1,89 @@
+﻿@model PicturePlannerIDF.Models.Thing
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Thing</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ThingId" />
+            <div class="form-group">
+                <label asp-for="SharedThingId" class="control-label"></label>
+                <input asp-for="SharedThingId" class="form-control" />
+                <span asp-validation-for="SharedThingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublicThingId" class="control-label"></label>
+                <input asp-for="PublicThingId" class="form-control" />
+                <span asp-validation-for="PublicThingId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LocalImagePath" class="control-label"></label>
+                <input asp-for="LocalImagePath" class="form-control" />
+                <span asp-validation-for="LocalImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SharedImagePath" class="control-label"></label>
+                <input asp-for="SharedImagePath" class="form-control" />
+                <span asp-validation-for="SharedImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PublicImagePath" class="control-label"></label>
+                <input asp-for="PublicImagePath" class="form-control" />
+                <span asp-validation-for="PublicImagePath" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UnitOfMeasure" class="control-label"></label>
+                <input asp-for="UnitOfMeasure" class="form-control" />
+                <span asp-validation-for="UnitOfMeasure" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Length" class="control-label"></label>
+                <input asp-for="Length" class="form-control" />
+                <span asp-validation-for="Length" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Width" class="control-label"></label>
+                <input asp-for="Width" class="form-control" />
+                <span asp-validation-for="Width" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="XPosition" class="control-label"></label>
+                <input asp-for="XPosition" class="form-control" />
+                <span asp-validation-for="XPosition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="YPosition" class="control-label"></label>
+                <input asp-for="YPosition" class="form-control" />
+                <span asp-validation-for="YPosition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Orientation" class="control-label"></label>
+                <input asp-for="Orientation" class="form-control" />
+                <span asp-validation-for="Orientation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

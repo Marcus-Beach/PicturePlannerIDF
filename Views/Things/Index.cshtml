@@ -1,0 +1,107 @@
+﻿@model IEnumerable<PicturePlannerIDF.Models.Thing>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.SharedThingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicThingId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LocalImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SharedImagePath)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PublicImagePath)
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UnitOfMeasure)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Length)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Width)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.XPosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.YPosition)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Orientation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.SharedThingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicThingId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LocalImagePath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SharedImagePath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PublicImagePath)
+            </td>
+            <th>
+                <img src="@item.SharedImagePath" alt="Alternate Text" />
+            </th>
+            <td>
+                @Html.DisplayFor(modelItem => item.UnitOfMeasure)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Length)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Width)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.XPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.YPosition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Orientation)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ThingId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ThingId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ThingId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
